@@ -56,18 +56,18 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Location = new System.Drawing.Point(186, 132);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(42, 17);
+            this.lblEmail.Size = new System.Drawing.Size(54, 17);
             this.lblEmail.TabIndex = 2;
-            this.lblEmail.Text = "Email";
+            this.lblEmail.Text = "Email  :";
             // 
             // lblPasssword
             // 
             this.lblPasssword.AutoSize = true;
             this.lblPasssword.Location = new System.Drawing.Point(186, 178);
             this.lblPasssword.Name = "lblPasssword";
-            this.lblPasssword.Size = new System.Drawing.Size(69, 17);
+            this.lblPasssword.Size = new System.Drawing.Size(81, 17);
             this.lblPasssword.TabIndex = 3;
-            this.lblPasssword.Text = "Password";
+            this.lblPasssword.Text = "Password  :";
             // 
             // btnLogin
             // 
