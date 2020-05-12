@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AkunModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Akun">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nama" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TanggalLahir" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Alamat" Type="nchar" MaxLength="200" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="JenisKelamin" Type="nchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="AkunPenyakit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdPenyakit" Type="int" />
+          <Property Name="IdAkun" Type="int" />
+          <Property Name="LamaSakit" Type="nchar" MaxLength="20" />
+          <Property Name="DeskripsiKeluhan" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Penyakit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NamaPenyakit" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_AkunPenyakit_ToAkun">
+          <End Role="Akun" Type="Self.Akun" Multiplicity="0..1" />
+          <End Role="AkunPenyakit" Type="Self.AkunPenyakit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Akun">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AkunPenyakit">
+              <PropertyRef Name="IdAkun" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AkunPenyakit_ToPenyakit">
+          <End Role="Penyakit" Type="Self.Penyakit" Multiplicity="0..1" />
+          <End Role="AkunPenyakit" Type="Self.AkunPenyakit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Penyakit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AkunPenyakit">
+              <PropertyRef Name="IdPenyakit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AkunModelStoreContainer">
+          <EntitySet Name="Akun" EntityType="Self.Akun" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AkunPenyakit" EntityType="Self.AkunPenyakit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Penyakit" EntityType="Self.Penyakit" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AkunPenyakit_ToAkun" Association="Self.FK_AkunPenyakit_ToAkun">
+            <End Role="Akun" EntitySet="Akun" />
+            <End Role="AkunPenyakit" EntitySet="AkunPenyakit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AkunPenyakit_ToPenyakit" Association="Self.FK_AkunPenyakit_ToPenyakit">
+            <End Role="Penyakit" EntitySet="Penyakit" />
+            <End Role="AkunPenyakit" EntitySet="AkunPenyakit" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AkunModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Akun">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nama" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TanggalLahir" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Alamat" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AkunPenyakits" Relationship="Self.FK_AkunPenyakit_ToAkun" FromRole="Akun" ToRole="AkunPenyakit" />
+          <Property Name="JenisKelamin" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AkunPenyakit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPenyakit" Type="Int32" />
+          <Property Name="IdAkun" Type="Int32" />
+          <NavigationProperty Name="Akun" Relationship="Self.FK_AkunPenyakit_ToAkun" FromRole="AkunPenyakit" ToRole="Akun" />
+          <NavigationProperty Name="Penyakit" Relationship="Self.FK_AkunPenyakit_ToPenyakit" FromRole="AkunPenyakit" ToRole="Penyakit" />
+          <Property Name="LamaSakit" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="DeskripsiKeluhan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Penyakit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="AkunPenyakits" Relationship="Self.FK_AkunPenyakit_ToPenyakit" FromRole="Penyakit" ToRole="AkunPenyakit" />
+          <Property Name="NamaPenyakit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_AkunPenyakit_ToAkun">
+          <End Role="Akun" Type="Self.Akun" Multiplicity="0..1" />
+          <End Role="AkunPenyakit" Type="Self.AkunPenyakit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Akun">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AkunPenyakit">
+              <PropertyRef Name="IdAkun" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AkunPenyakit_ToPenyakit">
+          <End Role="Penyakit" Type="Self.Penyakit" Multiplicity="0..1" />
+          <End Role="AkunPenyakit" Type="Self.AkunPenyakit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Penyakit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AkunPenyakit">
+              <PropertyRef Name="IdPenyakit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CekDokEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Akuns" EntityType="Self.Akun" />
+          <EntitySet Name="AkunPenyakits" EntityType="Self.AkunPenyakit" />
+          <EntitySet Name="Penyakits" EntityType="Self.Penyakit" />
+          <AssociationSet Name="FK_AkunPenyakit_ToAkun" Association="Self.FK_AkunPenyakit_ToAkun">
+            <End Role="Akun" EntitySet="Akuns" />
+            <End Role="AkunPenyakit" EntitySet="AkunPenyakits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AkunPenyakit_ToPenyakit" Association="Self.FK_AkunPenyakit_ToPenyakit">
+            <End Role="Penyakit" EntitySet="Penyakits" />
+            <End Role="AkunPenyakit" EntitySet="AkunPenyakits" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AkunModelStoreContainer" CdmEntityContainer="CekDokEntities">
+          <EntitySetMapping Name="Akuns">
+            <EntityTypeMapping TypeName="AkunModel.Akun">
+              <MappingFragment StoreEntitySet="Akun">
+                <ScalarProperty Name="JenisKelamin" ColumnName="JenisKelamin" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Nama" ColumnName="Nama" />
+                <ScalarProperty Name="TanggalLahir" ColumnName="TanggalLahir" />
+                <ScalarProperty Name="Alamat" ColumnName="Alamat" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AkunPenyakits">
+            <EntityTypeMapping TypeName="AkunModel.AkunPenyakit">
+              <MappingFragment StoreEntitySet="AkunPenyakit">
+                <ScalarProperty Name="DeskripsiKeluhan" ColumnName="DeskripsiKeluhan" />
+                <ScalarProperty Name="LamaSakit" ColumnName="LamaSakit" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdPenyakit" ColumnName="IdPenyakit" />
+                <ScalarProperty Name="IdAkun" ColumnName="IdAkun" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Penyakits">
+            <EntityTypeMapping TypeName="AkunModel.Penyakit">
+              <MappingFragment StoreEntitySet="Penyakit">
+                <ScalarProperty Name="NamaPenyakit" ColumnName="NamaPenyakit" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
