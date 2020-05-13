@@ -26,5 +26,19 @@ namespace UASPBO
                 lblNamaPenyakit.Text = akunPenyakit.Penyakit.NamaPenyakit;
             }
         }
+
+        private void btnCariDokter_Click(object sender, EventArgs e)
+        {
+            BuatJadwalForm buatJadwalForm = new BuatJadwalForm();
+            buatJadwalForm.Show();
+            this.Close();
+        }
+
+        private void btnInfoDokter_Click(object sender, EventArgs e)
+        {
+            InfoDokterForm infoDokterForm = new InfoDokterForm();
+            infoDokterForm.Show();
+            this.Close();
+        }
     }
 }

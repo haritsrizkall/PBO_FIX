@@ -24,6 +24,15 @@ namespace UASPBO
             {
                 Akun akun = context.Akuns.FirstOrDefault(a => a.Id == VariablePublic.UserId);
                 lblNama.Text = akun.Nama;
+                AkunPenyakit akunPenyakit = context.AkunPenyakits.FirstOrDefault(b => b.IdAkun == VariablePublic.UserId);
+               /* try
+                {
+                    lblJadwal1.Text = akunPenyakit.JadwalKonsul;
+                }
+                catch (Exception)
+                {
+                    lblJadwal1.Text = "Tidak Ada Jadwal";
+                }*/
             }
                 
         }
@@ -34,6 +43,18 @@ namespace UASPBO
             
             keluhanForm.Show();
             this.Hide();
+        }
+
+        private void lblJadwal1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCariDokter_Click(object sender, EventArgs e)
+        {
+            InfoJadwalForm infoJadwalForm = new InfoJadwalForm();
+            infoJadwalForm.Show();
+            this.Close();
         }
     }
 }

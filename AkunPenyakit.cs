@@ -19,11 +19,9 @@ namespace UASPBO
         public Nullable<int> IdAkun { get; set; }
         public string LamaSakit { get; set; }
         public string DeskripsiKeluhan { get; set; }
-        public Nullable<int> IdDokter { get; set; }
         public string JadwalKonsul { get; set; }
     
         public virtual Akun Akun { get; set; }
         public virtual Penyakit Penyakit { get; set; }
-        public virtual Dokter Dokter { get; set; }
     }
 }

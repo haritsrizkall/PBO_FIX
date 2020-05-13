@@ -14,16 +14,7 @@ namespace UASPBO
     
     public partial class Dokter
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Dokter()
-        {
-            this.AkunPenyakits = new HashSet<AkunPenyakit>();
-        }
-    
         public int Id { get; set; }
         public string NamaDokter { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AkunPenyakit> AkunPenyakits { get; set; }
     }
 }

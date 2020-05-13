@@ -92,6 +92,9 @@ namespace UASPBO
             int indexPenyakit = cmbKeluhan.Items.IndexOf(cmbKeluhan.SelectedItem.ToString())+1;
             using (CekDokEntities context = new CekDokEntities())
             {
+
+                
+
                 Penyakit penyakit = context.Penyakits.FirstOrDefault(p => p.Id == indexPenyakit);
                 AkunPenyakit akunPenyakit = new AkunPenyakit();
                 Akun akun = context.Akuns.FirstOrDefault(a => a.Id == VariablePublic.UserId);
@@ -119,10 +122,47 @@ namespace UASPBO
                 }
                 context.AkunPenyakits.Add(akunPenyakit);
                 context.SaveChanges();
-                KeluhanBerhasilForm keluhanBerhasilForm = new KeluhanBerhasilForm();
-                keluhanBerhasilForm.Show();
-                this.Hide();
+               
+
+
             }
+            using (CekDokEntities context = new CekDokEntities())
+            {
+                T[] InitializeArray<T>(int length) where T : new()
+                {
+                    T[] array = new T[length];
+                    for (int i = 0; i < length; ++i)
+                    {
+                        array[i] = new T();
+                    }
+
+                    return array;
+                }
+                Dokter[] dokter = InitializeArray<Dokter>(5);
+                string[] namaDokter = new string[5];
+                //Penyakit[] pnykt = new Penyakit[5];
+                string queryString = "SELECT NamaDokter FROM DataDokter";
+                OleDbConnection dbConnection = new OleDbConnection(connectionString);
+                DataSet dataSet = new DataSet();
+                dbConnection.Open();
+                OleDbDataAdapter dbAdapter = new OleDbDataAdapter(queryString, dbConnection);
+                dbAdapter.Fill(dataSet, "Data Dokter");
+                dbConnection.Close();
+                DataTable dataTable = dataSet.Tables["Data Dokter"];
+                int maxRow = dataTable.Rows.Count;
+                //enyakit penyakit = new Penyakit();
+                for (int i = 0; i < maxRow; i++)
+                {
+                    namaDokter[i] = dataTable.Rows[i].Field<string>("NamaDokter");
+                    dokter[i].NamaDokter = namaDokter[i];
+                    context.Dokters.Add(dokter[i]);
+                    context.SaveChanges();
+                }
+            }
+            VariablePublic.UserPenyakitId = indexPenyakit;
+            KeluhanBerhasilForm keluhanBerhasilForm = new KeluhanBerhasilForm();
+            keluhanBerhasilForm.Show();
+            this.Hide();
         }
     }
 }

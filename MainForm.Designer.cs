@@ -32,6 +32,7 @@
             this.lblNama = new System.Windows.Forms.Label();
             this.btnBuatKeluhan = new System.Windows.Forms.Button();
             this.btnCariDokter = new System.Windows.Forms.Button();
+            this.lblJadwal = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -66,18 +67,29 @@
             // 
             // btnCariDokter
             // 
-            this.btnCariDokter.Location = new System.Drawing.Point(320, 199);
+            this.btnCariDokter.Location = new System.Drawing.Point(320, 192);
             this.btnCariDokter.Name = "btnCariDokter";
             this.btnCariDokter.Size = new System.Drawing.Size(195, 33);
             this.btnCariDokter.TabIndex = 3;
-            this.btnCariDokter.Text = "Cari Dokter";
+            this.btnCariDokter.Text = "Info Jadwal";
             this.btnCariDokter.UseVisualStyleBackColor = true;
+            this.btnCariDokter.Click += new System.EventHandler(this.btnCariDokter_Click);
+            // 
+            // lblJadwal
+            // 
+            this.lblJadwal.AutoSize = true;
+            this.lblJadwal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJadwal.Location = new System.Drawing.Point(34, 316);
+            this.lblJadwal.Name = "lblJadwal";
+            this.lblJadwal.Size = new System.Drawing.Size(0, 20);
+            this.lblJadwal.TabIndex = 5;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblJadwal);
             this.Controls.Add(this.btnCariDokter);
             this.Controls.Add(this.btnBuatKeluhan);
             this.Controls.Add(this.lblNama);
@@ -96,5 +108,6 @@
         private System.Windows.Forms.Label lblNama;
         private System.Windows.Forms.Button btnBuatKeluhan;
         private System.Windows.Forms.Button btnCariDokter;
+        private System.Windows.Forms.Label lblJadwal;
     }
 }

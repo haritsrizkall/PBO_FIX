@@ -79,6 +79,12 @@
     <Compile Include="AkunPenyakit.cs">
       <DependentUpon>CekDokModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="BuatJadwalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuatJadwalForm.Designer.cs">
+      <DependentUpon>BuatJadwalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CekDokModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -96,6 +102,24 @@
     </Compile>
     <Compile Include="Dokter.cs">
       <DependentUpon>CekDokModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InfoDokterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoDokterForm.Designer.cs">
+      <DependentUpon>InfoDokterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoJadwalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoJadwalForm.Designer.cs">
+      <DependentUpon>InfoJadwalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoRumahSakitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoRumahSakitForm.Designer.cs">
+      <DependentUpon>InfoRumahSakitForm.cs</DependentUpon>
     </Compile>
     <Compile Include="KeluhanBerhasilForm.cs">
       <SubType>Form</SubType>
@@ -145,6 +169,15 @@
       <DependentUpon>TindakanForm.cs</DependentUpon>
     </Compile>
     <Compile Include="VariablePublic.cs" />
+    <EmbeddedResource Include="BuatJadwalForm.resx">
+      <DependentUpon>BuatJadwalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoDokterForm.resx">
+      <DependentUpon>InfoDokterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoJadwalForm.resx">
+      <DependentUpon>InfoJadwalForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KeluhanBerhasilForm.resx">
       <DependentUpon>KeluhanBerhasilForm.cs</DependentUpon>
     </EmbeddedResource>
