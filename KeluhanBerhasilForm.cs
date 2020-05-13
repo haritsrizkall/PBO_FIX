@@ -30,5 +30,10 @@ namespace UASPBO
             tindakanForm.Show();
             this.Hide();
         }
+
+        private void KeluhanBerhasilForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

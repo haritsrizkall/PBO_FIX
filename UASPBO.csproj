@@ -140,6 +140,7 @@
     <Compile Include="TindakanForm.Designer.cs">
       <DependentUpon>TindakanForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="VariablePublic.cs" />
     <EmbeddedResource Include="KeluhanBerhasilForm.resx">
       <DependentUpon>KeluhanBerhasilForm.cs</DependentUpon>
     </EmbeddedResource>

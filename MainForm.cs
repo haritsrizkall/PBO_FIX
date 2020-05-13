@@ -18,19 +18,11 @@ namespace UASPBO
             InitializeComponent();
         }
        
-        public string _textBox
-        {
-            set { email = value; }
-        }
-        public string _lblNama
-        {
-            get { return lblNama.Text;}
-        }
         private void MainForm_Load(object sender, EventArgs e)
         {
             using (CekDokEntities context = new CekDokEntities())
             {
-                Akun akun = context.Akuns.FirstOrDefault(a => a.Email == email);
+                Akun akun = context.Akuns.FirstOrDefault(a => a.Email == VariablePublic.memUserEmail);
                 lblNama.Text = akun.Nama;
             }
                 

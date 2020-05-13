@@ -61,6 +61,7 @@
             this.Controls.Add(this.btnKonsultasi);
             this.Name = "KeluhanBerhasilForm";
             this.Text = "KeluhanBerhasilForm";
+            this.Load += new System.EventHandler(this.KeluhanBerhasilForm_Load);
             this.ResumeLayout(false);
 
         }

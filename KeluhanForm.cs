@@ -52,7 +52,7 @@ namespace UASPBO
             using (CekDokEntities context = new CekDokEntities())
             {
                 AkunPenyakit akunPenyakit = new AkunPenyakit();
-                Akun akun = context.Akuns.FirstOrDefault(a => a.Nama == nama);
+                Akun akun = context.Akuns.FirstOrDefault(a => a.Email == VariablePublic.memUserEmail);
                 akunPenyakit.IdPenyakit = indexPenyakit;
                 akunPenyakit.IdAkun = akun.Id;
                 akunPenyakit.DeskripsiKeluhan = rtbKeluhan.Text;

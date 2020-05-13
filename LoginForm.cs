@@ -15,11 +15,7 @@ namespace UASPBO
         public LoginForm()
         {
             InitializeComponent();
-        }
-        public string _textBoxEmail
-        {
-            get { return tbEmail.Text; }
-        }
+        }    
         private void btnLogin_Click(object sender, EventArgs e)
         {
             using (CekDokEntities context = new CekDokEntities())
@@ -35,7 +31,8 @@ namespace UASPBO
                     {
                         
                         MainForm mainForm = new MainForm();
-                        mainForm._textBox = _textBoxEmail;
+                        VariablePublic.memUserEmail = tbEmail.Text;
+                        //mainForm._textBox = _textBoxEmail;
 
                         mainForm.Show();
                         this.Hide();
