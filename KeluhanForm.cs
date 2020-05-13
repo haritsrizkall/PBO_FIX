@@ -39,6 +39,19 @@ namespace UASPBO
             
             using (CekDokEntities context = new CekDokEntities())
             {
+                T[] InitializeArray<T>(int length) where T : new()
+                {
+                    T[] array = new T[length];
+                    for (int i = 0; i < length; ++i)
+                    {
+                        array[i] = new T();
+                    }
+
+                    return array;
+                }
+                Penyakit[] pnykt = InitializeArray<Penyakit>(5);
+                string[] namaPenyakit = new string[5];
+                //Penyakit[] pnykt = new Penyakit[5];
                 string queryString = "SELECT Penyakit FROM DataPenyakit";
                 OleDbConnection dbConnection = new OleDbConnection(connectionString);
                 DataSet dataSet = new DataSet();
@@ -48,10 +61,17 @@ namespace UASPBO
                 dbConnection.Close();
                 DataTable dataTable = dataSet.Tables["Data Penyakit"];
                 int maxRow = dataTable.Rows.Count;
+               //enyakit penyakit = new Penyakit();
                 for (int i = 0; i < maxRow; i++)
                 {
-                    cmbKeluhan.Items.Add(dataTable.Rows[i].Field<string>("Penyakit"));
+                    cmbKeluhan.Items.Add(dataTable.Rows[i].Field<string>("Penyakit"));                 
+                    namaPenyakit[i] = dataTable.Rows[i].Field<string>("Penyakit");
+                    pnykt[i].NamaPenyakit = namaPenyakit[i];
+                    context.Penyakits.Add(pnykt[i]);
+                    context.SaveChanges();
                 }
+                
+                
                 /*var pnykt1 = new Penyakit() { NamaPenyakit = "Penyakit Jantung" };
                 context.Penyakits.Add(pnykt1);
                 var pnykt2 = new Penyakit() { NamaPenyakit = "Penyakit Kulit" };
@@ -72,13 +92,14 @@ namespace UASPBO
             int indexPenyakit = cmbKeluhan.Items.IndexOf(cmbKeluhan.SelectedItem.ToString())+1;
             using (CekDokEntities context = new CekDokEntities())
             {
+                Penyakit penyakit = context.Penyakits.FirstOrDefault(p => p.Id == indexPenyakit);
                 AkunPenyakit akunPenyakit = new AkunPenyakit();
-                Akun akun = context.Akuns.FirstOrDefault(a => a.Email == VariablePublic.memUserEmail);
-                akunPenyakit.IdPenyakit = indexPenyakit;
+                Akun akun = context.Akuns.FirstOrDefault(a => a.Id == VariablePublic.UserId);
+                akunPenyakit.IdPenyakit = penyakit.Id ;
                 akunPenyakit.IdAkun = akun.Id;
                 akunPenyakit.DeskripsiKeluhan = rtbKeluhan.Text;
 
-                context.AkunPenyakits.Add(akunPenyakit);
+                
 
                 if (cb1Hari.Checked)
                 {
@@ -96,7 +117,8 @@ namespace UASPBO
                 {
                     akunPenyakit.LamaSakit = ">2 Minggu";
                 }
-               
+                context.AkunPenyakits.Add(akunPenyakit);
+                context.SaveChanges();
                 KeluhanBerhasilForm keluhanBerhasilForm = new KeluhanBerhasilForm();
                 keluhanBerhasilForm.Show();
                 this.Hide();
