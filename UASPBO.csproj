@@ -58,6 +58,7 @@
       <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -92,6 +93,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CekDokModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Dokter.cs">
+      <DependentUpon>CekDokModel.tt</DependentUpon>
     </Compile>
     <Compile Include="KeluhanBerhasilForm.cs">
       <SubType>Form</SubType>
@@ -179,6 +183,7 @@
       <DependentUpon>CekDokModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Penyakit&amp;Dokter.laccdb" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -209,6 +214,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CekDokModel.edmx</DependentUpon>
       <LastGenOutput>CekDokModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Penyakit&amp;Dokter.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>

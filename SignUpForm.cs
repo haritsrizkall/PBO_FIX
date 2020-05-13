@@ -32,6 +32,7 @@ namespace UASPBO
 
                 context.Akuns.Add(akun);
                 context.SaveChanges();
+           
 
                 if (akun.Email != null && akun.Password != null && akun.Nama != null && akun.TanggalLahir != null && akun.JenisKelamin != null && akun.Alamat != null)
                 {

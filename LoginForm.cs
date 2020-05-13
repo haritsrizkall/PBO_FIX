@@ -32,6 +32,7 @@ namespace UASPBO
                         
                         MainForm mainForm = new MainForm();
                         VariablePublic.memUserEmail = tbEmail.Text;
+                        VariablePublic.UserId = akun.Id;
                         //mainForm._textBox = _textBoxEmail;
 
                         mainForm.Show();

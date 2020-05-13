@@ -12,7 +12,7 @@ namespace UASPBO
 {
     public partial class MainForm : Form
     {
-        private string email;
+        
         public MainForm()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace UASPBO
         {
             using (CekDokEntities context = new CekDokEntities())
             {
-                Akun akun = context.Akuns.FirstOrDefault(a => a.Email == VariablePublic.memUserEmail);
+                Akun akun = context.Akuns.FirstOrDefault(a => a.Id == VariablePublic.UserId);
                 lblNama.Text = akun.Nama;
             }
                 
@@ -31,7 +31,7 @@ namespace UASPBO
         private void btnBuatKeluhan_Click(object sender, EventArgs e)
         {
             KeluhanForm keluhanForm = new KeluhanForm();
-            keluhanForm._SetNama = lblNama.Text;
+            
             keluhanForm.Show();
             this.Hide();
         }

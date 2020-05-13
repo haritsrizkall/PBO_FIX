@@ -64,12 +64,6 @@
             // cmbKeluhan
             // 
             this.cmbKeluhan.FormattingEnabled = true;
-            this.cmbKeluhan.Items.AddRange(new object[] {
-            "Penyakit Jantung",
-            "Penyakit Kulit",
-            "Penyakit THT",
-            "Penyakit Pencernaan",
-            "Penyakit Gigi"});
             this.cmbKeluhan.Location = new System.Drawing.Point(63, 124);
             this.cmbKeluhan.Name = "cmbKeluhan";
             this.cmbKeluhan.Size = new System.Drawing.Size(263, 24);

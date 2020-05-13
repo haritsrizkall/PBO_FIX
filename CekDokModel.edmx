@@ -26,6 +26,15 @@
           <Property Name="IdAkun" Type="int" />
           <Property Name="LamaSakit" Type="nchar" MaxLength="20" />
           <Property Name="DeskripsiKeluhan" Type="nvarchar(max)" />
+          <Property Name="IdDokter" Type="int" />
+          <Property Name="JadwalKonsul" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Dokter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="NamaDokter" Type="nvarchar" MaxLength="70" />
         </EntityType>
         <EntityType Name="Penyakit">
           <Key>
@@ -46,6 +55,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_AkunPenyakit_ToDokter">
+          <End Role="Dokter" Type="Self.Dokter" Multiplicity="0..1" />
+          <End Role="AkunPenyakit" Type="Self.AkunPenyakit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dokter">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AkunPenyakit">
+              <PropertyRef Name="IdDokter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_AkunPenyakit_ToPenyakit">
           <End Role="Penyakit" Type="Self.Penyakit" Multiplicity="0..1" />
           <End Role="AkunPenyakit" Type="Self.AkunPenyakit" Multiplicity="*" />
@@ -61,9 +82,14 @@
         <EntityContainer Name="AkunModelStoreContainer">
           <EntitySet Name="Akun" EntityType="Self.Akun" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AkunPenyakit" EntityType="Self.AkunPenyakit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dokter" EntityType="Self.Dokter" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Penyakit" EntityType="Self.Penyakit" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_AkunPenyakit_ToAkun" Association="Self.FK_AkunPenyakit_ToAkun">
             <End Role="Akun" EntitySet="Akun" />
+            <End Role="AkunPenyakit" EntitySet="AkunPenyakit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AkunPenyakit_ToDokter" Association="Self.FK_AkunPenyakit_ToDokter">
+            <End Role="Dokter" EntitySet="Dokter" />
             <End Role="AkunPenyakit" EntitySet="AkunPenyakit" />
           </AssociationSet>
           <AssociationSet Name="FK_AkunPenyakit_ToPenyakit" Association="Self.FK_AkunPenyakit_ToPenyakit">
@@ -99,6 +125,9 @@
           <NavigationProperty Name="Penyakit" Relationship="Self.FK_AkunPenyakit_ToPenyakit" FromRole="AkunPenyakit" ToRole="Penyakit" />
           <Property Name="LamaSakit" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="DeskripsiKeluhan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IdDokter" Type="Int32" />
+          <Property Name="JadwalKonsul" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Dokter" Relationship="AkunModel.FK_AkunPenyakit_ToDokter" FromRole="AkunPenyakit" ToRole="Dokter" />
         </EntityType>
         <EntityType Name="Penyakit">
           <Key>
@@ -144,7 +173,32 @@
             <End Role="Penyakit" EntitySet="Penyakits" />
             <End Role="AkunPenyakit" EntitySet="AkunPenyakits" />
           </AssociationSet>
+          <EntitySet Name="Dokters" EntityType="AkunModel.Dokter" />
+          <AssociationSet Name="FK_AkunPenyakit_ToDokter" Association="AkunModel.FK_AkunPenyakit_ToDokter">
+            <End Role="Dokter" EntitySet="Dokters" />
+            <End Role="AkunPenyakit" EntitySet="AkunPenyakits" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Dokter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="NamaDokter" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AkunPenyakits" Relationship="AkunModel.FK_AkunPenyakit_ToDokter" FromRole="Dokter" ToRole="AkunPenyakit" />
+        </EntityType>
+        <Association Name="FK_AkunPenyakit_ToDokter">
+          <End Type="AkunModel.Dokter" Role="Dokter" Multiplicity="0..1" />
+          <End Type="AkunModel.AkunPenyakit" Role="AkunPenyakit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dokter">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AkunPenyakit">
+              <PropertyRef Name="IdDokter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -167,6 +221,8 @@
           <EntitySetMapping Name="AkunPenyakits">
             <EntityTypeMapping TypeName="AkunModel.AkunPenyakit">
               <MappingFragment StoreEntitySet="AkunPenyakit">
+                <ScalarProperty Name="JadwalKonsul" ColumnName="JadwalKonsul" />
+                <ScalarProperty Name="IdDokter" ColumnName="IdDokter" />
                 <ScalarProperty Name="DeskripsiKeluhan" ColumnName="DeskripsiKeluhan" />
                 <ScalarProperty Name="LamaSakit" ColumnName="LamaSakit" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -179,6 +235,14 @@
             <EntityTypeMapping TypeName="AkunModel.Penyakit">
               <MappingFragment StoreEntitySet="Penyakit">
                 <ScalarProperty Name="NamaPenyakit" ColumnName="NamaPenyakit" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dokters">
+            <EntityTypeMapping TypeName="AkunModel.Dokter">
+              <MappingFragment StoreEntitySet="Dokter">
+                <ScalarProperty Name="NamaDokter" ColumnName="NamaDokter" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

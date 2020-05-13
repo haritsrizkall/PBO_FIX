@@ -19,7 +19,12 @@ namespace UASPBO
 
         private void TindakanForm_Load(object sender, EventArgs e)
         {
-           
+            using (CekDokEntities context = new CekDokEntities())
+            {
+                AkunPenyakit akunPenyakit = context.AkunPenyakits.FirstOrDefault(a => a.IdAkun == VariablePublic.UserId );
+                Penyakit penyakit = context.Penyakits.FirstOrDefault(p => p.Id == akunPenyakit.IdPenyakit);
+                lblNamaPenyakit.Text = penyakit.NamaPenyakit;
+            }
         }
     }
 }

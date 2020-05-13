@@ -28,5 +28,6 @@ namespace UASPBO
         public virtual DbSet<Akun> Akuns { get; set; }
         public virtual DbSet<AkunPenyakit> AkunPenyakits { get; set; }
         public virtual DbSet<Penyakit> Penyakits { get; set; }
+        public virtual DbSet<Dokter> Dokters { get; set; }
     }
 }

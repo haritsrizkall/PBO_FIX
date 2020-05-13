@@ -2,18 +2,25 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data.Common;
+
 
 namespace UASPBO
 {
     public partial class KeluhanForm : Form
     {
+        string connectionString = ConfigurationManager
+.ConnectionStrings["UASPBO.Properties.Settings.ConnString"]
+.ConnectionString;
         private string nama;
-        public string _SetNama
+       /* public string _SetNama
         {
             set { nama = value; }
         }
@@ -29,9 +36,23 @@ namespace UASPBO
 
         private void KeluhanForm_Load(object sender, EventArgs e)
         {
+            
             using (CekDokEntities context = new CekDokEntities())
             {
-                var pnykt1 = new Penyakit() { NamaPenyakit = "Penyakit Jantung" };
+                string queryString = "SELECT Penyakit FROM DataPenyakit";
+                OleDbConnection dbConnection = new OleDbConnection(connectionString);
+                DataSet dataSet = new DataSet();
+                dbConnection.Open();
+                OleDbDataAdapter dbAdapter = new OleDbDataAdapter(queryString, dbConnection);
+                dbAdapter.Fill(dataSet, "Data Penyakit");
+                dbConnection.Close();
+                DataTable dataTable = dataSet.Tables["Data Penyakit"];
+                int maxRow = dataTable.Rows.Count;
+                for (int i = 0; i < maxRow; i++)
+                {
+                    cmbKeluhan.Items.Add(dataTable.Rows[i].Field<string>("Penyakit"));
+                }
+                /*var pnykt1 = new Penyakit() { NamaPenyakit = "Penyakit Jantung" };
                 context.Penyakits.Add(pnykt1);
                 var pnykt2 = new Penyakit() { NamaPenyakit = "Penyakit Kulit" };
                 context.Penyakits.Add(pnykt2);
@@ -42,7 +63,7 @@ namespace UASPBO
                 var pnykt5 = new Penyakit() { NamaPenyakit = "Penyakit Gigi" };
                 context.Penyakits.Add(pnykt5);
 
-                context.SaveChanges();
+                context.SaveChanges();*/
             }
         }
 

@@ -12,18 +12,18 @@ namespace UASPBO
     using System;
     using System.Collections.Generic;
     
-    public partial class AkunPenyakit
+    public partial class Dokter
     {
-        public int Id { get; set; }
-        public Nullable<int> IdPenyakit { get; set; }
-        public Nullable<int> IdAkun { get; set; }
-        public string LamaSakit { get; set; }
-        public string DeskripsiKeluhan { get; set; }
-        public Nullable<int> IdDokter { get; set; }
-        public string JadwalKonsul { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Dokter()
+        {
+            this.AkunPenyakits = new HashSet<AkunPenyakit>();
+        }
     
-        public virtual Akun Akun { get; set; }
-        public virtual Penyakit Penyakit { get; set; }
-        public virtual Dokter Dokter { get; set; }
+        public int Id { get; set; }
+        public string NamaDokter { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AkunPenyakit> AkunPenyakits { get; set; }
     }
 }
