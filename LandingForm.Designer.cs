@@ -28,61 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSignUp = new System.Windows.Forms.Button();
+            System.Windows.Forms.Button btnSignUp;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LandingForm));
             this.linkSignIn = new System.Windows.Forms.LinkLabel();
-            this.lblAlready = new System.Windows.Forms.Label();
+            btnSignUp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSignUp
             // 
-            this.btnSignUp.Location = new System.Drawing.Point(288, 275);
-            this.btnSignUp.Name = "btnSignUp";
-            this.btnSignUp.Size = new System.Drawing.Size(221, 23);
-            this.btnSignUp.TabIndex = 0;
-            this.btnSignUp.Text = "Creat an Account";
-            this.btnSignUp.UseVisualStyleBackColor = true;
-            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
+            btnSignUp.BackColor = System.Drawing.Color.Black;
+            btnSignUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSignUp.BackgroundImage")));
+            btnSignUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btnSignUp.ForeColor = System.Drawing.Color.Transparent;
+            btnSignUp.Location = new System.Drawing.Point(249, 480);
+            btnSignUp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            btnSignUp.Name = "btnSignUp";
+            btnSignUp.Size = new System.Drawing.Size(310, 71);
+            btnSignUp.TabIndex = 0;
+            btnSignUp.UseVisualStyleBackColor = true;
+            btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
+            btnSignUp.MouseHover += new System.EventHandler(this.btnSignUp_Click);
             // 
             // linkSignIn
             // 
-            this.linkSignIn.AutoSize = true;
-            this.linkSignIn.Location = new System.Drawing.Point(458, 255);
+            this.linkSignIn.BackColor = System.Drawing.Color.Transparent;
+            this.linkSignIn.DisabledLinkColor = System.Drawing.Color.White;
+            this.linkSignIn.Font = new System.Drawing.Font("Montserrat", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkSignIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(104)))), ((int)(((byte)(200)))));
+            this.linkSignIn.Image = ((System.Drawing.Image)(resources.GetObject("linkSignIn.Image")));
+            this.linkSignIn.LinkColor = System.Drawing.Color.Transparent;
+            this.linkSignIn.Location = new System.Drawing.Point(486, 452);
             this.linkSignIn.Name = "linkSignIn";
-            this.linkSignIn.Size = new System.Drawing.Size(51, 17);
+            this.linkSignIn.Size = new System.Drawing.Size(59, 17);
             this.linkSignIn.TabIndex = 1;
             this.linkSignIn.TabStop = true;
-            this.linkSignIn.Text = "Sign In";
+            this.linkSignIn.Text = "                 ";
+            this.linkSignIn.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(104)))), ((int)(((byte)(200)))));
             this.linkSignIn.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSignIn_LinkClicked);
-            // 
-            // lblAlready
-            // 
-            this.lblAlready.AutoSize = true;
-            this.lblAlready.Location = new System.Drawing.Point(285, 255);
-            this.lblAlready.Name = "lblAlready";
-            this.lblAlready.Size = new System.Drawing.Size(176, 17);
-            this.lblAlready.TabIndex = 2;
-            this.lblAlready.Text = "Already Have an Account?";
+            this.linkSignIn.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // LandingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblAlready);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(803, 599);
             this.Controls.Add(this.linkSignIn);
-            this.Controls.Add(this.btnSignUp);
+            this.Controls.Add(btnSignUp);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LandingForm";
             this.Text = "LandingForm";
             this.Load += new System.EventHandler(this.LandingForm_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.LinkLabel linkSignIn;
-        private System.Windows.Forms.Label lblAlready;
     }
 }

@@ -28,25 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoRumahSakitForm));
             this.btnKembali = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnKembali
             // 
-            this.btnKembali.Location = new System.Drawing.Point(629, 351);
+            this.btnKembali.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(194)))), ((int)(((byte)(203)))));
+            this.btnKembali.ForeColor = System.Drawing.Color.Transparent;
+            this.btnKembali.Image = ((System.Drawing.Image)(resources.GetObject("btnKembali.Image")));
+            this.btnKembali.Location = new System.Drawing.Point(12, 13);
+            this.btnKembali.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnKembali.Name = "btnKembali";
-            this.btnKembali.Size = new System.Drawing.Size(122, 48);
+            this.btnKembali.Size = new System.Drawing.Size(65, 43);
             this.btnKembali.TabIndex = 0;
-            this.btnKembali.Text = "Kembali";
-            this.btnKembali.UseVisualStyleBackColor = true;
+            this.btnKembali.UseVisualStyleBackColor = false;
             this.btnKembali.Click += new System.EventHandler(this.btnKembali_Click);
             // 
             // InfoRumahSakitForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(803, 599);
             this.Controls.Add(this.btnKembali);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "InfoRumahSakitForm";
             this.Text = "InfoRumahSakitForm";
             this.ResumeLayout(false);

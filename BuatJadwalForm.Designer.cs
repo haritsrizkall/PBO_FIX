@@ -28,29 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuatJadwalForm));
             this.cbJadwal1 = new System.Windows.Forms.CheckBox();
             this.cbJadwal2 = new System.Windows.Forms.CheckBox();
             this.lblNamaDokter = new System.Windows.Forms.Label();
             this.btnBuatJadwal = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(297, 109);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Dokter yang tersedia  :";
-            // 
             // cbJadwal1
             // 
             this.cbJadwal1.AutoSize = true;
-            this.cbJadwal1.Location = new System.Drawing.Point(219, 210);
+            this.cbJadwal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbJadwal1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(176)))), ((int)(((byte)(185)))));
+            this.cbJadwal1.Location = new System.Drawing.Point(90, 301);
+            this.cbJadwal1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbJadwal1.Name = "cbJadwal1";
-            this.cbJadwal1.Size = new System.Drawing.Size(167, 21);
+            this.cbJadwal1.Size = new System.Drawing.Size(312, 36);
             this.cbJadwal1.TabIndex = 1;
             this.cbJadwal1.Text = "Kamis (08:00 - 12:00)";
             this.cbJadwal1.UseVisualStyleBackColor = true;
@@ -58,9 +51,13 @@
             // cbJadwal2
             // 
             this.cbJadwal2.AutoSize = true;
-            this.cbJadwal2.Location = new System.Drawing.Point(412, 210);
+            this.cbJadwal2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbJadwal2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(176)))), ((int)(((byte)(185)))));
+            this.cbJadwal2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cbJadwal2.Location = new System.Drawing.Point(420, 301);
+            this.cbJadwal2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbJadwal2.Name = "cbJadwal2";
-            this.cbJadwal2.Size = new System.Drawing.Size(165, 21);
+            this.cbJadwal2.Size = new System.Drawing.Size(307, 36);
             this.cbJadwal2.TabIndex = 2;
             this.cbJadwal2.Text = "Senin (17:00 - 20:00)";
             this.cbJadwal2.UseVisualStyleBackColor = true;
@@ -68,33 +65,42 @@
             // lblNamaDokter
             // 
             this.lblNamaDokter.AutoSize = true;
+            this.lblNamaDokter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(176)))), ((int)(((byte)(185)))));
             this.lblNamaDokter.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNamaDokter.Location = new System.Drawing.Point(315, 149);
+            this.lblNamaDokter.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblNamaDokter.Location = new System.Drawing.Point(315, 237);
             this.lblNamaDokter.Name = "lblNamaDokter";
-            this.lblNamaDokter.Size = new System.Drawing.Size(154, 29);
+            this.lblNamaDokter.Size = new System.Drawing.Size(0, 32);
             this.lblNamaDokter.TabIndex = 3;
-            this.lblNamaDokter.Text = "Nama Dokter";
+            this.lblNamaDokter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnBuatJadwal
             // 
-            this.btnBuatJadwal.Location = new System.Drawing.Point(320, 266);
+            this.btnBuatJadwal.Image = ((System.Drawing.Image)(resources.GetObject("btnBuatJadwal.Image")));
+            this.btnBuatJadwal.Location = new System.Drawing.Point(305, 368);
+            this.btnBuatJadwal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBuatJadwal.Name = "btnBuatJadwal";
-            this.btnBuatJadwal.Size = new System.Drawing.Size(143, 46);
+            this.btnBuatJadwal.Size = new System.Drawing.Size(191, 43);
             this.btnBuatJadwal.TabIndex = 4;
-            this.btnBuatJadwal.Text = "Buat Jadwal";
             this.btnBuatJadwal.UseVisualStyleBackColor = true;
             this.btnBuatJadwal.Click += new System.EventHandler(this.btnBuatJadwal_Click);
             // 
             // BuatJadwalForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(803, 599);
             this.Controls.Add(this.btnBuatJadwal);
             this.Controls.Add(this.lblNamaDokter);
             this.Controls.Add(this.cbJadwal2);
             this.Controls.Add(this.cbJadwal1);
-            this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "BuatJadwalForm";
             this.Text = "BuatJadwal";
             this.Load += new System.EventHandler(this.BuatJadwal_Load);
@@ -104,8 +110,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox cbJadwal1;
         private System.Windows.Forms.CheckBox cbJadwal2;
         private System.Windows.Forms.Label lblNamaDokter;

@@ -28,63 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KeluhanForm));
             this.cmbKeluhan = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.cb1Hari = new System.Windows.Forms.CheckBox();
             this.cb2Minggu = new System.Windows.Forms.CheckBox();
             this.cb2Hari = new System.Windows.Forms.CheckBox();
             this.cb1Minggu = new System.Windows.Forms.CheckBox();
             this.rtbKeluhan = new System.Windows.Forms.RichTextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnInputKeluhan = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(58, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Buat Keluhan";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(58, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Jenis Keluhan";
-            // 
             // cmbKeluhan
             // 
+            this.cmbKeluhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbKeluhan.FormattingEnabled = true;
-            this.cmbKeluhan.Location = new System.Drawing.Point(63, 124);
+            this.cmbKeluhan.Location = new System.Drawing.Point(30, 239);
+            this.cmbKeluhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbKeluhan.Name = "cmbKeluhan";
-            this.cmbKeluhan.Size = new System.Drawing.Size(263, 24);
+            this.cmbKeluhan.Size = new System.Drawing.Size(341, 37);
             this.cmbKeluhan.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(58, 166);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 25);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Lama Sakit";
             // 
             // cb1Hari
             // 
             this.cb1Hari.AutoSize = true;
-            this.cb1Hari.Location = new System.Drawing.Point(63, 211);
+            this.cb1Hari.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb1Hari.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cb1Hari.Location = new System.Drawing.Point(30, 336);
+            this.cb1Hari.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cb1Hari.Name = "cb1Hari";
-            this.cb1Hari.Size = new System.Drawing.Size(68, 21);
+            this.cb1Hari.Size = new System.Drawing.Size(96, 30);
             this.cb1Hari.TabIndex = 4;
             this.cb1Hari.Text = "1 Hari";
             this.cb1Hari.UseVisualStyleBackColor = true;
@@ -92,9 +64,11 @@
             // cb2Minggu
             // 
             this.cb2Minggu.AutoSize = true;
-            this.cb2Minggu.Location = new System.Drawing.Point(199, 249);
+            this.cb2Minggu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb2Minggu.Location = new System.Drawing.Point(231, 378);
+            this.cb2Minggu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cb2Minggu.Name = "cb2Minggu";
-            this.cb2Minggu.Size = new System.Drawing.Size(96, 21);
+            this.cb2Minggu.Size = new System.Drawing.Size(140, 30);
             this.cb2Minggu.TabIndex = 5;
             this.cb2Minggu.Text = ">2 Minggu";
             this.cb2Minggu.UseVisualStyleBackColor = true;
@@ -102,9 +76,11 @@
             // cb2Hari
             // 
             this.cb2Hari.AutoSize = true;
-            this.cb2Hari.Location = new System.Drawing.Point(199, 211);
+            this.cb2Hari.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb2Hari.Location = new System.Drawing.Point(231, 336);
+            this.cb2Hari.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cb2Hari.Name = "cb2Hari";
-            this.cb2Hari.Size = new System.Drawing.Size(81, 21);
+            this.cb2Hari.Size = new System.Drawing.Size(115, 30);
             this.cb2Hari.TabIndex = 6;
             this.cb2Hari.Text = "2-3 Hari";
             this.cb2Hari.UseVisualStyleBackColor = true;
@@ -112,57 +88,56 @@
             // cb1Minggu
             // 
             this.cb1Minggu.AutoSize = true;
-            this.cb1Minggu.Location = new System.Drawing.Point(63, 249);
+            this.cb1Minggu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb1Minggu.Location = new System.Drawing.Point(30, 378);
+            this.cb1Minggu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cb1Minggu.Name = "cb1Minggu";
-            this.cb1Minggu.Size = new System.Drawing.Size(88, 21);
+            this.cb1Minggu.Size = new System.Drawing.Size(127, 30);
             this.cb1Minggu.TabIndex = 7;
             this.cb1Minggu.Text = "1 Minggu";
             this.cb1Minggu.UseVisualStyleBackColor = true;
             // 
             // rtbKeluhan
             // 
-            this.rtbKeluhan.Location = new System.Drawing.Point(63, 324);
+            this.rtbKeluhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbKeluhan.Location = new System.Drawing.Point(424, 245);
+            this.rtbKeluhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rtbKeluhan.Name = "rtbKeluhan";
-            this.rtbKeluhan.Size = new System.Drawing.Size(261, 91);
+            this.rtbKeluhan.Size = new System.Drawing.Size(338, 195);
             this.rtbKeluhan.TabIndex = 8;
             this.rtbKeluhan.Text = "";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(58, 285);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(192, 25);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Deskripsi Tambahan";
-            // 
             // btnInputKeluhan
             // 
-            this.btnInputKeluhan.Location = new System.Drawing.Point(63, 434);
+            this.btnInputKeluhan.Image = ((System.Drawing.Image)(resources.GetObject("btnInputKeluhan.Image")));
+            this.btnInputKeluhan.Location = new System.Drawing.Point(509, 460);
+            this.btnInputKeluhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnInputKeluhan.Name = "btnInputKeluhan";
-            this.btnInputKeluhan.Size = new System.Drawing.Size(132, 39);
+            this.btnInputKeluhan.Size = new System.Drawing.Size(169, 54);
             this.btnInputKeluhan.TabIndex = 10;
-            this.btnInputKeluhan.Text = "Input";
             this.btnInputKeluhan.UseVisualStyleBackColor = true;
             this.btnInputKeluhan.Click += new System.EventHandler(this.btnInputKeluhan_Click);
             // 
             // KeluhanForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 513);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(803, 599);
             this.Controls.Add(this.btnInputKeluhan);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.rtbKeluhan);
             this.Controls.Add(this.cb1Minggu);
             this.Controls.Add(this.cb2Hari);
             this.Controls.Add(this.cb2Minggu);
             this.Controls.Add(this.cb1Hari);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbKeluhan);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(176)))), ((int)(((byte)(185)))));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "KeluhanForm";
             this.Text = "KeluhanForm";
             this.Load += new System.EventHandler(this.KeluhanForm_Load);
@@ -172,17 +147,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbKeluhan;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox cb1Hari;
         private System.Windows.Forms.CheckBox cb2Minggu;
         private System.Windows.Forms.CheckBox cb2Hari;
         private System.Windows.Forms.CheckBox cb1Minggu;
         private System.Windows.Forms.RichTextBox rtbKeluhan;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnInputKeluhan;
     }
 }
