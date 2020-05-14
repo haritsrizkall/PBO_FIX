@@ -40,5 +40,12 @@ namespace UASPBO
             infoDokterForm.Show();
             this.Close();
         }
+
+        private void btnInfoRumahSakit_Click(object sender, EventArgs e)
+        {
+            InfoRumahSakitForm infoRumahSakitForm = new InfoRumahSakitForm();
+            infoRumahSakitForm.Show();
+            this.Close();
+        }
     }
 }

@@ -31,13 +31,14 @@
             this.lblJadwal1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnKembali = new System.Windows.Forms.Button();
+            this.lblNamaDokter = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblJadwal1
             // 
             this.lblJadwal1.AutoSize = true;
             this.lblJadwal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJadwal1.Location = new System.Drawing.Point(28, 168);
+            this.lblJadwal1.Location = new System.Drawing.Point(28, 191);
             this.lblJadwal1.Name = "lblJadwal1";
             this.lblJadwal1.Size = new System.Drawing.Size(159, 25);
             this.lblJadwal1.TabIndex = 8;
@@ -64,11 +65,22 @@
             this.btnKembali.UseVisualStyleBackColor = true;
             this.btnKembali.Click += new System.EventHandler(this.btnKembali_Click);
             // 
+            // lblNamaDokter
+            // 
+            this.lblNamaDokter.AutoSize = true;
+            this.lblNamaDokter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNamaDokter.Location = new System.Drawing.Point(28, 166);
+            this.lblNamaDokter.Name = "lblNamaDokter";
+            this.lblNamaDokter.Size = new System.Drawing.Size(126, 25);
+            this.lblNamaDokter.TabIndex = 10;
+            this.lblNamaDokter.Text = "Nama Dokter";
+            // 
             // InfoJadwalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblNamaDokter);
             this.Controls.Add(this.btnKembali);
             this.Controls.Add(this.lblJadwal1);
             this.Controls.Add(this.label2);
@@ -85,5 +97,6 @@
         private System.Windows.Forms.Label lblJadwal1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnKembali;
+        private System.Windows.Forms.Label lblNamaDokter;
     }
 }

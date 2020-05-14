@@ -27,8 +27,11 @@ namespace UASPBO
         {
             using (CekDokEntities context = new CekDokEntities())
             {
+                AkunPenyakit akunPenyakit = context.AkunPenyakits.FirstOrDefault(a => a.IdAkun == VariablePublic.UserId);
                 Dokter dokter = context.Dokters.FirstOrDefault(d => d.Id == VariablePublic.UserPenyakitId);
                 lblNamaDokter.Text = dokter.NamaDokter;
+                akunPenyakit.IdDokter = dokter.Id;
+                context.SaveChanges();
             }
 
 

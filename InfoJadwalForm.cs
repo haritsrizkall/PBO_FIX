@@ -27,13 +27,17 @@ namespace UASPBO
             using (CekDokEntities context = new CekDokEntities())
             {
                 AkunPenyakit akunPenyakit = context.AkunPenyakits.FirstOrDefault(a => a.IdAkun == VariablePublic.UserId);
-            try
+                
+
+                if (akunPenyakit != null)
                 {
                     lblJadwal1.Text = akunPenyakit.JadwalKonsul;
+                    lblNamaDokter.Text = akunPenyakit.Dokter.NamaDokter;
                 }
-                catch (Exception)
+                else
                 {
-                    lblJadwal1.Text = "Tidak Ada Jadwal";
+                    lblJadwal1.Text = "Tidak ada Jadwal";
+                    lblNamaDokter.Text = "";
                 }
             }
            

@@ -71,10 +71,14 @@
             // 
             // dtpDateOfBirtf
             // 
+            this.dtpDateOfBirtf.CustomFormat = "dd.MM.yyyy";
+            this.dtpDateOfBirtf.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDateOfBirtf.Location = new System.Drawing.Point(285, 183);
             this.dtpDateOfBirtf.Name = "dtpDateOfBirtf";
+            this.dtpDateOfBirtf.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpDateOfBirtf.Size = new System.Drawing.Size(226, 22);
             this.dtpDateOfBirtf.TabIndex = 5;
+            this.dtpDateOfBirtf.Value = new System.DateTime(2020, 5, 14, 0, 0, 0, 0);
             // 
             // label1
             // 

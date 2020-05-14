@@ -33,6 +33,8 @@
             this.btnBuatKeluhan = new System.Windows.Forms.Button();
             this.btnCariDokter = new System.Windows.Forms.Button();
             this.lblJadwal = new System.Windows.Forms.Label();
+            this.btnProfile = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -84,11 +86,33 @@
             this.lblJadwal.Size = new System.Drawing.Size(0, 20);
             this.lblJadwal.TabIndex = 5;
             // 
+            // btnProfile
+            // 
+            this.btnProfile.Location = new System.Drawing.Point(320, 246);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(195, 33);
+            this.btnProfile.TabIndex = 6;
+            this.btnProfile.Text = "Info Profile";
+            this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(629, 382);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 33);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Sign Out";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnProfile);
             this.Controls.Add(this.lblJadwal);
             this.Controls.Add(this.btnCariDokter);
             this.Controls.Add(this.btnBuatKeluhan);
@@ -109,5 +133,7 @@
         private System.Windows.Forms.Button btnBuatKeluhan;
         private System.Windows.Forms.Button btnCariDokter;
         private System.Windows.Forms.Label lblJadwal;
+        private System.Windows.Forms.Button btnProfile;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -11,6 +11,7 @@
         <AssociationConnector Association="AkunModel.FK_AkunPenyakit_ToAkun" ManuallyRouted="false" />
         <AssociationConnector Association="AkunModel.FK_AkunPenyakit_ToPenyakit" ManuallyRouted="false" />
         <EntityTypeShape EntityType="AkunModel.Dokter" Width="1.5" PointX="3.375" PointY="4.75" />
+        <AssociationConnector Association="AkunModel.FK_AkunPenyakit_ToDokter" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

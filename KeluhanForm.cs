@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.Common;
-
+using System.Runtime.Remoting.Contexts;
 
 namespace UASPBO
 {
@@ -120,10 +120,23 @@ namespace UASPBO
                 {
                     akunPenyakit.LamaSakit = ">2 Minggu";
                 }
+                
                 context.AkunPenyakits.Add(akunPenyakit);
                 context.SaveChanges();
-               
 
+                              
+                if (akunPenyakit.IdPenyakit != null && akunPenyakit.IdAkun != null && akunPenyakit.LamaSakit != null)
+                {
+                    VariablePublic.UserPenyakitId = indexPenyakit;
+                    KeluhanBerhasilForm keluhanBerhasilForm = new KeluhanBerhasilForm();
+                    keluhanBerhasilForm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Data yang diisikan masih kosong");
+                }
+                
 
             }
             using (CekDokEntities context = new CekDokEntities())
@@ -158,11 +171,9 @@ namespace UASPBO
                     context.Dokters.Add(dokter[i]);
                     context.SaveChanges();
                 }
+                
             }
-            VariablePublic.UserPenyakitId = indexPenyakit;
-            KeluhanBerhasilForm keluhanBerhasilForm = new KeluhanBerhasilForm();
-            keluhanBerhasilForm.Show();
-            this.Hide();
+           
         }
     }
 }

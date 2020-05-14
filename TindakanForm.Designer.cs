@@ -53,6 +53,7 @@
             this.btnInfoRumahSakit.TabIndex = 1;
             this.btnInfoRumahSakit.Text = "Info Rumah Sakit";
             this.btnInfoRumahSakit.UseVisualStyleBackColor = true;
+            this.btnInfoRumahSakit.Click += new System.EventHandler(this.btnInfoRumahSakit_Click);
             // 
             // label1
             // 

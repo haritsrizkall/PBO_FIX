@@ -16,5 +16,12 @@ namespace UASPBO
         {
             InitializeComponent();
         }
+
+        private void btnKembali_Click(object sender, EventArgs e)
+        {
+            TindakanForm tindakanForm = new TindakanForm();
+            tindakanForm.Show();
+            this.Close();
+        }
     }
 }

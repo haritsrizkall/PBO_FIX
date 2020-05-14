@@ -56,5 +56,19 @@ namespace UASPBO
             infoJadwalForm.Show();
             this.Close();
         }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            InfoProfile infoProfile = new InfoProfile();
+            infoProfile.Show();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LandingForm landingForm = new LandingForm();
+            landingForm.Show();
+            this.Close();
+        }
     }
 }

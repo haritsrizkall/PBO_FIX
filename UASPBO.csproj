@@ -115,6 +115,12 @@
     <Compile Include="InfoJadwalForm.Designer.cs">
       <DependentUpon>InfoJadwalForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InfoProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoProfile.Designer.cs">
+      <DependentUpon>InfoProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="InfoRumahSakitForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InfoJadwalForm.resx">
       <DependentUpon>InfoJadwalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoProfile.resx">
+      <DependentUpon>InfoProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoRumahSakitForm.resx">
+      <DependentUpon>InfoRumahSakitForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KeluhanBerhasilForm.resx">
       <DependentUpon>KeluhanBerhasilForm.cs</DependentUpon>
