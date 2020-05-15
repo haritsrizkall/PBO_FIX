@@ -22,7 +22,7 @@ namespace UASPBO
             using (CekDokEntities context = new CekDokEntities())
             {
                 AkunPenyakit akunPenyakit = context.AkunPenyakits.FirstOrDefault(a => a.IdAkun == VariablePublic.UserId );
-                //Penyakit penyakit = context.Penyakits.FirstOrDefault(p => p.Id == akunPenyakit.IdPenyakit);
+               
                 lblNamaPenyakit.Text = akunPenyakit.Penyakit.NamaPenyakit;
             }
         }
@@ -31,21 +31,21 @@ namespace UASPBO
         {
             BuatJadwalForm buatJadwalForm = new BuatJadwalForm();
             buatJadwalForm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnInfoDokter_Click(object sender, EventArgs e)
         {
             InfoDokterForm infoDokterForm = new InfoDokterForm();
             infoDokterForm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnInfoRumahSakit_Click(object sender, EventArgs e)
         {
             InfoRumahSakitForm infoRumahSakitForm = new InfoRumahSakitForm();
             infoRumahSakitForm.Show();
-            this.Close();
+            this.Hide();
         }
     }
 }

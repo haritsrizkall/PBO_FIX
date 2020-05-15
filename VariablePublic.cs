@@ -10,9 +10,9 @@ namespace UASPBO
     
     class VariablePublic
     {
-        public static string memUserEmail;
+       
         public static int UserId;
         public static int UserPenyakitId;
-        public static int DokterId;
+       
     }
 }

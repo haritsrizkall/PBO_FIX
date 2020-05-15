@@ -55,7 +55,7 @@ namespace UASPBO
 
                 MainForm mainForm = new MainForm();
                 mainForm.Show();
-                this.Close();
+                this.Hide();
             }
            
         }

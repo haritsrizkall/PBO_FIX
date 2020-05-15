@@ -25,14 +25,7 @@ namespace UASPBO
                 Akun akun = context.Akuns.FirstOrDefault(a => a.Id == VariablePublic.UserId);
                 lblNama.Text = akun.Nama;
                 AkunPenyakit akunPenyakit = context.AkunPenyakits.FirstOrDefault(b => b.IdAkun == VariablePublic.UserId);
-               /* try
-                {
-                    lblJadwal1.Text = akunPenyakit.JadwalKonsul;
-                }
-                catch (Exception)
-                {
-                    lblJadwal1.Text = "Tidak Ada Jadwal";
-                }*/
+              
             }
                 
         }
@@ -54,21 +47,21 @@ namespace UASPBO
         {
             InfoJadwalForm infoJadwalForm = new InfoJadwalForm();
             infoJadwalForm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
             InfoProfile infoProfile = new InfoProfile();
             infoProfile.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             LandingForm landingForm = new LandingForm();
             landingForm.Show();
-            this.Close();
+            this.Hide();
         }
     }
 }

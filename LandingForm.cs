@@ -24,16 +24,21 @@ namespace UASPBO
             this.Hide();
         }
 
-        private void btnSignUp_Click(object sender, EventArgs e)
+       /* private void btnSignUp_Click(object sender, EventArgs e)
         {
-            SignUpForm signUpForm = new SignUpForm();
-            signUpForm.Show();
-            this.Hide();
-        }
+            
+        }*/
 
         private void LandingForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCreateAccount_Click(object sender, EventArgs e)
+        {
+            SignUpForm signUpForm = new SignUpForm();
+            signUpForm.Show();
+            this.Hide();
         }
     }
 }

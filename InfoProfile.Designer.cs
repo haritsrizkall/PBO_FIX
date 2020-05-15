@@ -42,9 +42,9 @@
             this.lblNama.BackColor = System.Drawing.Color.Transparent;
             this.lblNama.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNama.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.lblNama.Location = new System.Drawing.Point(58, 194);
+            this.lblNama.Location = new System.Drawing.Point(69, 187);
             this.lblNama.Name = "lblNama";
-            this.lblNama.Size = new System.Drawing.Size(0, 33);
+            this.lblNama.Size = new System.Drawing.Size(0, 28);
             this.lblNama.TabIndex = 1;
             // 
             // lblTanggalLahir
@@ -53,9 +53,9 @@
             this.lblTanggalLahir.BackColor = System.Drawing.Color.Transparent;
             this.lblTanggalLahir.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTanggalLahir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.lblTanggalLahir.Location = new System.Drawing.Point(58, 279);
+            this.lblTanggalLahir.Location = new System.Drawing.Point(69, 270);
             this.lblTanggalLahir.Name = "lblTanggalLahir";
-            this.lblTanggalLahir.Size = new System.Drawing.Size(0, 33);
+            this.lblTanggalLahir.Size = new System.Drawing.Size(0, 28);
             this.lblTanggalLahir.TabIndex = 3;
             // 
             // lblEmail
@@ -64,9 +64,9 @@
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.lblEmail.Location = new System.Drawing.Point(58, 450);
+            this.lblEmail.Location = new System.Drawing.Point(69, 445);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(0, 33);
+            this.lblEmail.Size = new System.Drawing.Size(0, 28);
             this.lblEmail.TabIndex = 5;
             // 
             // lblAlamat
@@ -75,36 +75,34 @@
             this.lblAlamat.BackColor = System.Drawing.Color.Transparent;
             this.lblAlamat.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAlamat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.lblAlamat.Location = new System.Drawing.Point(58, 367);
+            this.lblAlamat.Location = new System.Drawing.Point(69, 360);
             this.lblAlamat.Name = "lblAlamat";
-            this.lblAlamat.Size = new System.Drawing.Size(0, 33);
+            this.lblAlamat.Size = new System.Drawing.Size(0, 28);
             this.lblAlamat.TabIndex = 7;
             // 
             // btnKembali
             // 
             this.btnKembali.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
             this.btnKembali.Image = ((System.Drawing.Image)(resources.GetObject("btnKembali.Image")));
-            this.btnKembali.Location = new System.Drawing.Point(12, 13);
-            this.btnKembali.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnKembali.Location = new System.Drawing.Point(11, 10);
             this.btnKembali.Name = "btnKembali";
-            this.btnKembali.Size = new System.Drawing.Size(65, 43);
+            this.btnKembali.Size = new System.Drawing.Size(58, 34);
             this.btnKembali.TabIndex = 11;
             this.btnKembali.UseVisualStyleBackColor = false;
             this.btnKembali.Click += new System.EventHandler(this.btnKembali_Click);
             // 
             // InfoProfile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(803, 599);
+            this.ClientSize = new System.Drawing.Size(714, 522);
             this.Controls.Add(this.btnKembali);
             this.Controls.Add(this.lblAlamat);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblTanggalLahir);
             this.Controls.Add(this.lblNama);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "InfoProfile";

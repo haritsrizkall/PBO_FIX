@@ -21,7 +21,7 @@ namespace UASPBO
         {
             TindakanForm tindakanForm = new TindakanForm();
             tindakanForm.Show();
-            this.Close();
+            this.Hide();
         }
     }
 }

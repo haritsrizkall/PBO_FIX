@@ -19,16 +19,8 @@ namespace UASPBO
         string connectionString = ConfigurationManager
 .ConnectionStrings["UASPBO.Properties.Settings.ConnString"]
 .ConnectionString;
-        private string nama;
-       /* public string _SetNama
-        {
-            set { nama = value; }
-        }
-        /*private string email;
-        public string _GetEmail
-        {
-            set { email = value; }
-        }*/
+        
+       
         public KeluhanForm()
         {
             InitializeComponent();
@@ -51,7 +43,7 @@ namespace UASPBO
                 }
                 Penyakit[] pnykt = InitializeArray<Penyakit>(5);
                 string[] namaPenyakit = new string[5];
-                //Penyakit[] pnykt = new Penyakit[5];
+                
                 string queryString = "SELECT Penyakit FROM DataPenyakit";
                 OleDbConnection dbConnection = new OleDbConnection(connectionString);
                 DataSet dataSet = new DataSet();
@@ -61,7 +53,7 @@ namespace UASPBO
                 dbConnection.Close();
                 DataTable dataTable = dataSet.Tables["Data Penyakit"];
                 int maxRow = dataTable.Rows.Count;
-               //enyakit penyakit = new Penyakit();
+               
                 for (int i = 0; i < maxRow; i++)
                 {
                     cmbKeluhan.Items.Add(dataTable.Rows[i].Field<string>("Penyakit"));                 
@@ -72,18 +64,7 @@ namespace UASPBO
                 }
                 
                 
-                /*var pnykt1 = new Penyakit() { NamaPenyakit = "Penyakit Jantung" };
-                context.Penyakits.Add(pnykt1);
-                var pnykt2 = new Penyakit() { NamaPenyakit = "Penyakit Kulit" };
-                context.Penyakits.Add(pnykt2);
-                var pnykt3 = new Penyakit() { NamaPenyakit = "Penyakit THT" };
-                context.Penyakits.Add(pnykt3);
-                var pnykt4 = new Penyakit() { NamaPenyakit = "Penyakit Pencernaan" };
-                context.Penyakits.Add(pnykt4);
-                var pnykt5 = new Penyakit() { NamaPenyakit = "Penyakit Gigi" };
-                context.Penyakits.Add(pnykt5);
-
-                context.SaveChanges();*/
+                
             }
         }
 
@@ -153,7 +134,7 @@ namespace UASPBO
                 }
                 Dokter[] dokter = InitializeArray<Dokter>(5);
                 string[] namaDokter = new string[5];
-                //Penyakit[] pnykt = new Penyakit[5];
+           
                 string queryString = "SELECT NamaDokter FROM DataDokter";
                 OleDbConnection dbConnection = new OleDbConnection(connectionString);
                 DataSet dataSet = new DataSet();
@@ -163,7 +144,7 @@ namespace UASPBO
                 dbConnection.Close();
                 DataTable dataTable = dataSet.Tables["Data Dokter"];
                 int maxRow = dataTable.Rows.Count;
-                //enyakit penyakit = new Penyakit();
+               
                 for (int i = 0; i < maxRow; i++)
                 {
                     namaDokter[i] = dataTable.Rows[i].Field<string>("NamaDokter");
