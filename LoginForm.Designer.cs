@@ -60,7 +60,7 @@
             // 
             this.btnLogin.BackColor = System.Drawing.Color.Transparent;
             this.btnLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.BackgroundImage")));
-            this.btnLogin.Location = new System.Drawing.Point(236, 455);
+            this.btnLogin.Location = new System.Drawing.Point(235, 455);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(138, 54);
